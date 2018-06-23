@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MetroTools</title>
+    <link rel="stylesheet" type="text/css" href="metrotools.css"/>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="metrotools.js"></script>
+    <script src="jquery-ui.min.js"></script>
+</head>
+<body>
+
+<div id="heading">
+    <h1>MetroTools</h1>
+    <img class="logo" src="metro_img/Metro.png">
+</div>
+
+<div class="board">
+    <div id="meter"><img src="/metro_img/Bars.png"></div>
+    <div class="soundboard" style="position: relative; left: 0; top: 0;">
+        <div id="cursor"><img class="draggable ui-widget-content" src="/metro_img/cursor.png"/></div>
+        <img id="boardImage" src="/metro_img/Board.png"/>
+        <div class="soundBlocks">
+            <img id="soundBlock1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; z-index: 2; display: none" />
+            <img id="soundBlock2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 149px; z-index: 2; display: none"/>
+            <img id="soundBlock3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 299px; z-index: 2; display: none"/>
+            <img id="soundBlock4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 448px; z-index: 2; display: none"/>
+            <img id="soundBlock5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 598px; z-index: 2; display: none"/>
+            <img id="soundBlock6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 747px; z-index: 2; display: none"/>
+            <img id="soundBlock7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 896px; z-index: 2; display: none"/>
+            <img id="soundBlock8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 1043px; z-index: 2; display: none"/>
+            <img id="soundBlock9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 1191px; z-index: 2; display: none"/>
+            <img id="soundBlock10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 1340px; z-index: 2; display: none"/>
+            <img id="soundBlock11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 1490px; z-index: 2; display: none"/>
+            <img id="soundBlock12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 1639px; z-index: 2; display: none"/>
+            <img id="soundBlock13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 1788px; z-index: 2; display: none"/>
+            <img id="soundBlock14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 1937px; z-index: 2; display: none"/>
+            <img id="soundBlock15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 2085px; z-index: 2; display: none"/>
+            <img id="soundBlock16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 2234px; z-index: 2; display: none"/>
+            <img id="soundBlock17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 2px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound2Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; z-index: 2; display: none"/>
+            <img id="sound2Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound2Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound2Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound2Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound2Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound2Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound2Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound2Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound2Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound2Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound2Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound2Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound2Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound2Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound2Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound2Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 51px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound3Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; z-index: 2; display: none"/>
+            <img id="sound3Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound3Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound3Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound3Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound3Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound3Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound3Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound3Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound3Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound3Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound3Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound3Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound3Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound3Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound3Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound3Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 99px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound4Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; z-index: 2; display: none"/>
+            <img id="sound4Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound4Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound4Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound4Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound4Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound4Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound4Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound4Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound4Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound4Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound4Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound4Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound4Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound4Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound4Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound4Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 147px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound5Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; z-index: 2; display: none"/>
+            <img id="sound5Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound5Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound5Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound5Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound5Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound5Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound5Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound5Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound5Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound5Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound5Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound5Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound5Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound5Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound5Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound5Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 195px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound6Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; z-index: 2; display: none"/>
+            <img id="sound6Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound6Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound6Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound6Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound6Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound6Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound6Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound6Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound6Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound6Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound6Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound6Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound6Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound6Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound6Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound6Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 242px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound7Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; z-index: 2; display: none" />
+            <img id="sound7Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound7Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound7Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound7Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound7Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound7Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound7Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound7Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound7Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound7Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound7Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound7Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound7Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound7Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound7Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound7Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 290px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound8Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; z-index: 2; display: none" />
+            <img id="sound8Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound8Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound8Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound8Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound8Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound8Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound8Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound8Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound8Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound8Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound8Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound8Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound8Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound8Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound8Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound8Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 338px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound9Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; z-index: 2; display: none" />
+            <img id="sound9Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound9Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound9Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound9Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound9Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound9Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound9Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound9Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound9Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound9Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound9Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound9Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound9Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound9Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound9Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound9Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 385px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound10Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; z-index: 2; display: none" />
+            <img id="sound10Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound10Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound10Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound10Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound10Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound10Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound10Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound10Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound10Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound10Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound10Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound10Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound10Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound10Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound10Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound10Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 432px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound11Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; z-index: 2; display: none" />
+            <img id="sound11Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound11Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound11Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound11Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound11Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound11Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound11Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound11Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound11Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound11Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound11Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound11Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound11Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound11Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound11Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound11Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 480px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound12Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; z-index: 2; display: none" />
+            <img id="sound12Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound12Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound12Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound12Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound12Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound12Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound12Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound12Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound12Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound12Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound12Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound12Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound12Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound12Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound12Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound12Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 528px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound13Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; z-index: 2; display: none" />
+            <img id="sound13Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound13Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound13Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound13Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound13Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound13Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound13Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound13Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound13Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound13Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound13Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound13Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound13Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound13Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound13Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound13Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 575px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound14Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; z-index: 2; display: none" />
+            <img id="sound14Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound14Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound14Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound14Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound14Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound14Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound14Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound14Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound14Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound14Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound14Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound14Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound14Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound14Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound14Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound14Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 622px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound15Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; z-index: 2; display: none" />
+            <img id="sound15Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound15Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound15Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound15Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound15Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound15Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound15Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound15Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound15Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound15Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound15Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound15Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound15Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound15Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound15Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound15Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 670px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound16Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; z-index: 2; display: none" />
+            <img id="sound16Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound16Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound16Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound16Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound16Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound16Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound16Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound16Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound16Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound16Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound16Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound16Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound16Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound16Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound16Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound16Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 718px; left: 2381px; z-index: 2; display: none"/>
+            <img id="sound17Block1" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; z-index: 2; display: none" />
+            <img id="sound17Block2" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 149px; z-index: 2; display: none"/>
+            <img id="sound17Block3" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 299px; z-index: 2; display: none"/>
+            <img id="sound17Block4" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 448px; z-index: 2; display: none"/>
+            <img id="sound17Block5" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 598px; z-index: 2; display: none"/>
+            <img id="sound17Block6" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 747px; z-index: 2; display: none"/>
+            <img id="sound17Block7" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 896px; z-index: 2; display: none"/>
+            <img id="sound17Block8" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 1043px; z-index: 2; display: none"/>
+            <img id="sound17Block9" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 1191px; z-index: 2; display: none"/>
+            <img id="sound17Block10" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 1340px; z-index: 2; display: none"/>
+            <img id="sound17Block11" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 1490px; z-index: 2; display: none"/>
+            <img id="sound17Block12" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 1639px; z-index: 2; display: none"/>
+            <img id="sound17Block13" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 1788px; z-index: 2; display: none"/>
+            <img id="sound17Block14" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 1937px; z-index: 2; display: none"/>
+            <img id="sound17Block15" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 2085px; z-index: 2; display: none"/>
+            <img id="sound17Block16" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 2234px; z-index: 2; display: none"/>
+            <img id="sound17Block17" class="draggable ui-widget-content" src="Block.png" style="position: absolute; top: 766px; left: 2381px; z-index: 2; display: none"/>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="play"><img src="play.png"></button>
+        <button id="pause"><img src="pause.png"></button>
+        <button id="record"><img src="record.png"></button>
+    </div>
+</div>
+
+<div class="browser">Sound Types</div>
+<div class="sounds">Sounds</div>
+<div id="navcontainer">
+    <ul id="navlist">
+        <li id="Piano"><a href="#">Piano</a></li>
+        <li id="Drums"><a href="#">Drums</a></li>
+        <li id="Strings"><a href="#">Strings</a></li>
+        <li id="Extras"><a href="#">Extras</a></li>
+        <li id="Brass"><a href="#">Brass</a></li>
+        <li id="Custom"><a href="#">Custom</a></li>
+    </ul>
+</div>
+<div class="soundFiles" style="margin-bottom: 150px">
+    <ul class="drumSounds" style="list-style-type:none">
+        <li id="claps" type="text"><a href="#">Claps</a>
+            <ul style="list-style-type:none">
+                <li><button id="clap1">MB Clap (1)</button><button id="addclap1" class="add">Add</button></li>
+                <li><button id="clap2">MB Clap (2)</button><button id="addclap2" class="add">Add</button></li>
+                <li><button id="clap3">MB Clap (3)</button><button id="addclap3" class="add">Add</button></li>
+                <li><button id="clap4">MB Clap (4)</button><button id="addclap4" class="add">Add</button></li>
+                <li><button id="clap5">MB Clap (5)</button><button id="addclap5" class="add">Add</button></li>
+                <li><button id="clap6">MB Clap (6)</button><button id="addclap6" class="add">Add</button></li>
+                <li><button id="clap7">MB Clap (7)</button><button id="addclap7" class="add">Add</button></li>
+                <li><button id="clap8">MB Clap (8)</button><button id="addclap8" class="add">Add</button></li>
+                <li><button id="clap9">MB Clap (9)</button><button id="addclap9" class="add">Add</button></li>
+                <li><button id="clap10">MB Clap (10)</button><button id="addclap10" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="808s"><a href="#">808s</a>
+            <ul style="list-style-type:none">
+                <li><button id="8081">MB 808 (1)</button><button id="add8081" class="add">Add</button></li>
+                <li><button id="8082">MB 808 (2)</button><button id="add8082" class="add">Add</button></li>
+                <li><button id="8083">MB 808 (3)</button><button id="add8083" class="add">Add</button></li>
+                <li><button id="8084">MB 808 (4)</button><button id="add8084" class="add">Add</button></li>
+                <li><button id="8085">MB 808 (5)</button><button id="add8085" class="add">Add</button></li>
+                <li><button id="8086">MB 808 (6)</button><button id="add8086" class="add">Add</button></li>
+                <li><button id="8087">MB 808 (7)</button><button id="add8087" class="add">Add</button></li>
+                <li><button id="8088">MB 808 (8)</button><button id="add8088" class="add">Add</button></li>
+                <li><button id="8089">MB 808 (9)</button><button id="add8089" class="add">Add</button></li>
+                <li><button id="80810">MB 808 (10)</button><button id="add80810" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="crashes"><a href="#">Crashes</a>
+            <ul style="list-style-type:none">
+                <li><button id="crash1">MB Crash (1)</button><button id="addcrash1" class="add">Add</button></li>
+                <li><button id="crash2">MB Crash (2)</button><button id="addcrash2" class="add">Add</button></li>
+                <li><button id="crash3">MB Crash (3)</button><button id="addcrash3" class="add">Add</button></li>
+                <li><button id="crash4">MB Crash (4)</button><button id="addcrash4" class="add">Add</button></li>
+                <li><button id="crash5">MB Crash (5)</button><button id="addcrash5" class="add">Add</button></li>
+                <li><button id="crash6">MB Crash (6)</button><button id="addcrash6" class="add">Add</button></li>
+                <li><button id="crash7">MB Crash (7)</button><button id="addcrash7" class="add">Add</button></li>
+                <li><button id="crash8">MB Crash (8)</button><button id="addcrash8" class="add">Add</button></li>
+                <li><button id="crash9">MB Crash (9)</button><button id="addcrash9" class="add">Add</button></li>
+                <li><button id="crash10">MB Crash (10)</button><button id="addcrash10" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="FX"><a href="#">FX</a>
+            <ul style="list-style-type:none">
+                <li><button id="drop1">MB Drop Effect (1)</button><button id="adddrop1" class="add">Add</button></li>
+                <li><button id="drop2">MB Drop Effect (2)</button><button id="adddrop2" class="add">Add</button></li>
+                <li><button id="drop3">MB Drop Effect (3)</button><button id="adddrop3" class="add">Add</button></li>
+                <li><button id="fx1">MB FX (1)</button><button id="addfx1" class="add">Add</button></li>
+                <li><button id="fx2">MB FX (2)</button><button id="addfx2" class="add">Add</button></li>
+                <li><button id="fx3">MB FX (3)</button><button id="addfx3" class="add">Add</button></li>
+                <li><button id="fx4">MB FX (4)</button><button id="addfx4" class="add">Add</button></li>
+                <li><button id="fx5">MB FX (5)</button><button id="addfx5" class="add">Add</button></li>
+                <li><button id="fx6">MB FX (6)</button><button id="addfx6" class="add">Add</button></li>
+                <li><button id="fx7">MB FX (7)</button><button id="addfx7" class="add">Add</button></li>
+                <li><button id="fx8">MB FX (8)</button><button id="addfx8" class="add">Add</button></li>
+                <li><button id="fx9">MB FX (9)</button><button id="addfx9" class="add">Add</button></li>
+                <li><button id="fx10">MB FX (10)</button><button id="addfx10" class="add">Add</button></li>
+                <li><button id="sfx1">MB SFX (1)</button><button id="addsfx1" class="add">Add</button></li>
+                <li><button id="sfx2">MB SFX (2)</button><button id="addsfx2" class="add">Add</button></li>
+                <li><button id="sfx3">MB SFX (3)</button><button id="addsfx3" class="add">Add</button></li>
+                <li><button id="sfx4">MB SFX (4)</button><button id="addsfx4" class="add">Add</button></li>
+                <li><button id="tfx1">MB Trans FX (1)</button><button id="addtfx1" class="add">Add</button></li>
+                <li><button id="tfx2">MB Trans FX (2)</button><button id="addtfx2" class="add">Add</button></li>
+                <li><button id="tfx3">MB Trans FX (3)</button><button id="addtfx3" class="add">Add</button></li>
+                <li><button id="tfx4">MB Trans FX (4)</button><button id="addtfx4" class="add">Add</button></li>
+                <li><button id="tfx5">MB Trans FX (5)</button><button id="addtfx5" class="add">Add</button></li>
+                <li><button id="tfx6">MB Trans FX (6)</button><button id="addtfx6" class="add">Add</button></li>
+                <li><button id="tfx7">MB Trans FX (7)</button><button id="addtfx7" class="add">Add</button></li>
+                <li><button id="tfx8">MB Trans FX (8)</button><button id="addtfx8" class="add">Add</button></li>
+                <li><button id="tfx9">MB Trans FX (9)</button><button id="addtfx9" class="add">Add</button></li>
+                <li><button id="tfx10">MB Trans FX (10)</button><button id="addtfx10" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="hihats"><a href="#">Hi Hats</a>
+            <ul style="list-style-type:none">
+                <li><button id="hh1">MB Hi Hat (1)</button><button id="addhh1" class="add">Add</button></li>
+                <li><button id="hh2">MB Hi Hat (2)</button><button id="addhh2" class="add">Add</button></li>
+                <li><button id="hh3">MB Hi Hat (3)</button><button id="addhh3" class="add">Add</button></li>
+                <li><button id="hh4">MB Hi Hat (4)</button><button id="addhh4" class="add">Add</button></li>
+                <li><button id="hh5">MB Hi Hat (5)</button><button id="addhh5" class="add">Add</button></li>
+                <li><button id="hh6">MB Hi Hat (6)</button><button id="addhh6" class="add">Add</button></li>
+                <li><button id="hh7">MB Hi Hat (7)</button><button id="addhh7" class="add">Add</button></li>
+                <li><button id="hh8">MB Hi Hat (8)</button><button id="addhh8" class="add">Add</button></li>
+                <li><button id="hh9">MB Hi Hat (9)</button><button id="addhh9" class="add">Add</button></li>
+                <li><button id="hh10">MB Hi Hat (10)</button><button id="addhh10" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="hits"><a href="#">Hits</a>
+            <ul style="list-style-type:none">
+                <li><button id="hit1">MB Hit (1)</button><button id="addhit1" class="add">Add</button></li>
+                <li><button id="hit2">MB Hit (2)</button><button id="addhit2" class="add">Add</button></li>
+                <li><button id="hit3">MB Hit (3)</button><button id="addhit3" class="add">Add</button></li>
+                <li><button id="hit4">MB Hit (4)</button><button id="addhit4" class="add">Add</button></li>
+                <li><button id="hit5">MB Hit (5)</button><button id="addhit5" class="add">Add</button></li>
+                <li><button id="hit6">MB Hit (6)</button><button id="addhit6" class="add">Add</button></li>
+                <li><button id="hit7">MB Hit (7)</button><button id="addhit7" class="add">Add</button></li>
+                <li><button id="hit8">MB Hit (8)</button><button id="addhit8" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="kicks"><a href="#">Kicks</a>
+            <ul style="list-style-type:none">
+                <li><button id="kick1">MB Kick (1)</button><button id="addkick1" class="add">Add</button></li>
+                <li><button id="kick2">MB Kick (2)</button><button id="addkick2" class="add">Add</button></li>
+                <li><button id="kick3">MB Kick (3)</button><button id="addkick3" class="add">Add</button></li>
+                <li><button id="kick4">MB Kick (4)</button><button id="addkick4" class="add">Add</button></li>
+                <li><button id="kick5">MB Kick (5)</button><button id="addkick5" class="add">Add</button></li>
+                <li><button id="kick6">MB Kick (6)</button><button id="addkick6" class="add">Add</button></li>
+                <li><button id="kick7">MB Kick (7)</button><button id="addkick7" class="add">Add</button></li>
+                <li><button id="kick8">MB Kick (8)</button><button id="addkick8" class="add">Add</button></li>
+                <li><button id="kick9">MB Kick (9)</button><button id="addkick9" class="add">Add</button></li>
+                <li><button id="kick10">MB Kick (10)</button><button id="addkick10" class="add">Add</button></li>
+                <li><button id="kick11">MB Kick (11)</button><button id="addkick11" class="add">Add</button></li>
+                <li><button id="kick12">MB Kick (12)</button><button id="addkick12" class="add">Add</button></li>
+                <li><button id="kick13">MB Kick (13)</button><button id="addkick13" class="add">Add</button></li>
+                <li><button id="kick14">MB Kick (14)</button><button id="addkick14" class="add">Add</button></li>
+                <li><button id="kick15">MB Kick (15)</button><button id="addkick15" class="add">Add</button></li>
+                <li><button id="kick16">MB Kick (16)</button><button id="addkick16" class="add">Add</button></li>
+                <li><button id="kick17">MB Kick (17)</button><button id="addkick17" class="add">Add</button></li>
+                <li><button id="kick18">MB Kick (18)</button><button id="addkick18" class="add">Add</button></li>
+                <li><button id="kick19">MB Kick (19)</button><button id="addkick19" class="add">Add</button></li>
+                <li><button id="kick20">MB Kick (20)</button><button id="addkick20" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="openhats"><a href="#">Open Hats</a>
+            <ul style="list-style-type:none">
+                <li><button id="oh1">MB Open Hat (1)</button><button id="addoh1" class="add">Add</button></li>
+                <li><button id="oh2">MB Open Hat (2)</button><button id="addoh2" class="add">Add</button></li>
+                <li><button id="oh3">MB Open Hat (3)</button><button id="addoh3" class="add">Add</button></li>
+                <li><button id="oh4">MB Open Hat (4)</button><button id="addoh4" class="add">Add</button></li>
+                <li><button id="oh5">MB Open Hat (5)</button><button id="addoh5" class="add">Add</button></li>
+                <li><button id="oh6">MB Open Hat (6)</button><button id="addoh6" class="add">Add</button></li>
+                <li><button id="oh7">MB Open Hat (7)</button><button id="addoh7" class="add">Add</button></li>
+                <li><button id="oh8">MB Open Hat (8)</button><button id="addoh8" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="percs"><a href="#">Percs</a>
+            <ul style="list-style-type:none">
+                <li><button id="perc1">MB Perc (1)</button><button id="addperc1" class="add">Add</button></li>
+                <li><button id="perc2">MB Perc (2)</button><button id="addperc2" class="add">Add</button></li>
+                <li><button id="perc3">MB Perc (3)</button><button id="addperc3" class="add">Add</button></li>
+                <li><button id="perc4">MB Perc (4)</button><button id="addperc4" class="add">Add</button></li>
+                <li><button id="perc5">MB Perc (5)</button><button id="addperc5" class="add">Add</button></li>
+                <li><button id="perc6">MB Perc (6)</button><button id="addperc6" class="add">Add</button></li>
+                <li><button id="perc7">MB Perc (7)</button><button id="addperc7" class="add">Add</button></li>
+                <li><button id="perc8">MB Perc (8)</button><button id="addperc8" class="add">Add</button></li>
+                <li><button id="perc9">MB Perc (9)</button><button id="addperc9" class="add">Add</button></li>
+                <li><button id="perc10">MB Perc (10)</button><button id="addperc10" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="snares"><a href="#">Snares</a>
+            <ul style="list-style-type:none">
+                <li><button id="snare1">MB Snare (1)</button><button id="addsnare1" class="add">Add</button></li>
+                <li><button id="snare2">MB Snare (2)</button><button id="addsnare2" class="add">Add</button></li>
+                <li><button id="snare3">MB Snare (3)</button><button id="addsnare3" class="add">Add</button></li>
+                <li><button id="snare4">MB Snare (4)</button><button id="addsnare4" class="add">Add</button></li>
+                <li><button id="snare5">MB Snare (5)</button><button id="addsnare5" class="add">Add</button></li>
+                <li><button id="snare6">MB Snare (6)</button><button id="addsnare6" class="add">Add</button></li>
+                <li><button id="snare7">MB Snare (7)</button><button id="addsnare7" class="add">Add</button></li>
+                <li><button id="snare8">MB Snare (8)</button><button id="addsnare8" class="add">Add</button></li>
+                <li><button id="snare9">MB Snare (9)</button><button id="addsnare9" class="add">Add</button></li>
+                <li><button id="snare10">MB Snare (10)</button><button id="addsnare10" class="add">Add</button></li>
+                <li><button id="snare11">MB Snare (11)</button><button id="addsnare11" class="add">Add</button></li>
+                <li><button id="snare12">MB Snare (12)</button><button id="addsnare12" class="add">Add</button></li>
+                <li><button id="snare13">MB Snare (13)</button><button id="addsnare13" class="add">Add</button></li>
+                <li><button id="snare14">MB Snare (14)</button><button id="addsnare14" class="add">Add</button></li>
+                <li><button id="snare15">MB Snare (15)</button><button id="addsnare15" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="vox"><a href="#">Vox</a>
+            <ul style="list-style-type:none">
+                <li><button id="vox1">MB Vox (1)</button><button id="addvox1" class="add">Add</button></li>
+                <li><button id="vox2">MB Vox (2)</button><button id="addvox2" class="add">Add</button></li>
+                <li><button id="vox3">MB Vox (3)</button><button id="addvox3" class="add">Add</button></li>
+                <li><button id="vox4">MB Vox (4)</button><button id="addvox4" class="add">Add</button></li>
+                <li><button id="vox5">MB Vox (5)</button><button id="addvox5" class="add">Add</button></li>
+                <li><button id="vox6">MB Vox (6)</button><button id="addvox6" class="add">Add</button></li>
+                <li><button id="vox7">MB Vox (7)</button><button id="addvox7" class="add">Add</button></li>
+                <li><button id="vox8">MB Vox (8)</button><button id="addvox8" class="add">Add</button></li>
+                <li><button id="vox9">MB Vox (9)</button><button id="addvox9" class="add">Add</button></li>
+                <li><button id="vox10">MB Vox (10)</button><button id="addvox10" class="add">Add</button></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="extraSounds" style="list-style-type:none">
+        <li id="extraSounds"><a href="#">Extras</a>
+            <ul style="list-style-type:none">
+                <li><button id="mafia">808 Mafia Tag</button><button id="addmafia" class="add">Add</button></li>
+                <li><button id="bomb">MB Bomb Hit</button><button id="addbomb" class="add">Add</button></li>
+                <li><button id="choir">MB Choir</button><button id="addchoir" class="add">Add</button></li>
+                <li><button id="churchbell">MB Church Bell</button><button id="addchurchbell" class="add">Add</button></li>
+                <li><button id="djSpin">MB DJ Spin</button><button id="adddjSpin" class="add">Add</button></li>
+                <li><button id="loop">MB Loop</button><button id="addloop" class="add">Add</button></li>
+                <li><button id="lumi">MB Lumi Hit</button><button id="addlumi" class="add">Add</button></li>
+                <li><button id="narcatics">MB Narcatics Hit</button><button id="addnarcatics" class="add">Add</button></li>
+                <li><button id="organ">MB Organ</button><button id="addorgan" class="add">Add</button></li>
+                <li><button id="pizzi">B Pizzi Loop</button><button id="addpizzi" class="add">Add</button></li>
+                <li><button id="sonic">MB Sonic Boom</button><button id="addsonic" class="add">Add</button></li>
+                <li><button id="tubular">MB Tubular Bell</button><button id="addtubular" class="add">Add</button></li>
+                <li><button id="mbtag">Metro Boomin Tag</button><button id="addmbtag" class="add">Add</button></li>
+                <li><button id="djesco">DJ Esco Let's Go!</button><button id="adddjesco" class="add">Add</button></li>
+                <li><button id="djeskimo">DJ Eskimo City 1</button><button id="adddjeskimo" class="add">Add</button></li>
+                <li><button id="eskimo">DJ Eskimo City 2</button><button id="addeskimo" class="add">Add</button></li>
+                <li><button id="youngmetro">Young Metro Tag</button><button id="addyoungmetro" class="add">Add</button></li>
+                <li><button id="travisscott">Travis Scott Tag</button><button id="addtravisscott" class="add">Add</button></li>
+                <li><button id="london">We Got London on the Track</button><button id="addlondon" class="add">Add</button></li>
+                <li><button id="zaytoven">Zaytoven</button><button id="addzaytoven" class="add">Add</button></li>
+                <li><button id="drakeyeah">Drake "Yeah"</button><button id="adddrakeyeah" class="add">Add</button></li>
+                <li><button id="stephcurry">Fuck Steph Curry</button><button id="addstephcurry" class="add">Add</button></li>
+                <li><button id="gucci">It's Gucci</button><button id="addgucci" class="add">Add</button></li>
+                <li><button id="ovo">OVO Sound Radio</button><button id="addovo" class="add">Add</button></li>
+                <li><button id="sixdrake">Six Drake</button><button id="addsixdrake" class="add">Add</button></li>
+                <li><button id="straightup">Straight Up</button><button id="addstraightup" class="add">Add</button></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="pianoSounds" style="list-style-type: none">
+        <li id="notes"><a href="#">Notes</a>
+            <ul style="list-style-type: none">
+                <li><button id="note001">Note 1</button><button id="addnote001" class="add">Add</button></li>
+                <li><button id="note002">Note 2</button><button id="addnote002" class="add">Add</button></li>
+                <li><button id="note003">Note 3</button><button id="addnote003" class="add">Add</button></li>
+                <li><button id="note004">Note 4</button><button id="addnote004" class="add">Add</button></li>
+                <li><button id="note005">Note 5</button><button id="addnote005" class="add">Add</button></li>
+                <li><button id="note006">Note 6</button><button id="addnote006" class="add">Add</button></li>
+                <li><button id="note007">Note 7</button><button id="addnote007" class="add">Add</button></li>
+                <li><button id="note008">Note 8</button><button id="addnote008" class="add">Add</button></li>
+                <li><button id="note009">Note 9</button><button id="addnote009" class="add">Add</button></li>
+                <li><button id="note010">Note 10</button><button id="addnote010" class="add">Add</button></li>
+                <li><button id="note011">Note 11</button><button id="addnote011" class="add">Add</button></li>
+                <li><button id="note012">Note 12</button><button id="addnote012" class="add">Add</button></li>
+                <li><button id="note013">Note 13</button><button id="addnote013" class="add">Add</button></li>
+                <li><button id="note014">Note 14</button><button id="addnote014" class="add">Add</button></li>
+                <li><button id="note015">Note 15</button><button id="addnote015" class="add">Add</button></li>
+                <li><button id="note016">Note 16</button><button id="addnote016" class="add">Add</button></li>
+                <li><button id="note017">Note 17</button><button id="addnote017" class="add">Add</button></li>
+                <li><button id="note018">Note 18</button><button id="addnote018" class="add">Add</button></li>
+                <li><button id="note019">Note 19</button><button id="addnote019" class="add">Add</button></li>
+                <li><button id="note020">Note 20</button><button id="addnote020" class="add">Add</button></li>
+                <li><button id="note021">Note 21</button><button id="addnote021" class="add">Add</button></li>
+                <li><button id="note022">Note 22</button><button id="addnote022" class="add">Add</button></li>
+                <li><button id="note023">Note 23</button><button id="addnote023" class="add">Add</button></li>
+                <li><button id="note024">Note 24</button><button id="addnote024" class="add">Add</button></li>
+                <li><button id="note025">Note 25</button><button id="addnote025" class="add">Add</button></li>
+                <li><button id="note026">Note 26</button><button id="addnote026" class="add">Add</button></li>
+                <li><button id="note027">Note 27</button><button id="addnote027" class="add">Add</button></li>
+                <li><button id="note028">Note 28</button><button id="addnote028" class="add">Add</button></li>
+                <li><button id="note029">Note 29</button><button id="addnote029" class="add">Add</button></li>
+                <li><button id="note030">Note 30</button><button id="addnote030" class="add">Add</button></li>
+                <li><button id="note031">Note 31</button><button id="addnote031" class="add">Add</button></li>
+                <li><button id="note032">Note 32</button><button id="addnote032" class="add">Add</button></li>
+                <li><button id="note033">Note 33</button><button id="addnote033" class="add">Add</button></li>
+                <li><button id="note034">Note 34</button><button id="addnote034" class="add">Add</button></li>
+                <li><button id="note035">Note 35</button><button id="addnote035" class="add">Add</button></li>
+                <li><button id="note036">Note 36</button><button id="addnote036" class="add">Add</button></li>
+                <li><button id="note037">Note 37</button><button id="addnote037" class="add">Add</button></li>
+                <li><button id="note038">Note 38</button><button id="addnote038" class="add">Add</button></li>
+                <li><button id="note039">Note 39</button><button id="addnote039" class="add">Add</button></li>
+                <li><button id="note040">Note 40</button><button id="addnote040" class="add">Add</button></li>
+                <li><button id="note041">Note 41</button><button id="addnote041" class="add">Add</button></li>
+                <li><button id="note042">Note 42</button><button id="addnote042" class="add">Add</button></li>
+                <li><button id="note043">Note 43</button><button id="addnote043" class="add">Add</button></li>
+                <li><button id="note044">Note 44</button><button id="addnote044" class="add">Add</button></li>
+                <li><button id="note045">Note 45</button><button id="addnote045" class="add">Add</button></li>
+                <li><button id="note046">Note 46</button><button id="addnote046" class="add">Add</button></li>
+                <li><button id="note047">Note 47</button><button id="addnote047" class="add">Add</button></li>
+                <li><button id="note048">Note 48</button><button id="addnote048" class="add">Add</button></li>
+                <li><button id="note049">Note 49</button><button id="addnote049" class="add">Add</button></li>
+                <li><button id="note050">Note 50</button><button id="addnote050" class="add">Add</button></li>
+                <li><button id="note051">Note 51</button><button id="addnote051" class="add">Add</button></li>
+                <li><button id="note052">Note 52</button><button id="addnote052" class="add">Add</button></li>
+                <li><button id="note053">Note 53</button><button id="addnote053" class="add">Add</button></li>
+                <li><button id="note054">Note 54</button><button id="addnote054" class="add">Add</button></li>
+                <li><button id="note055">Note 55</button><button id="addnote055" class="add">Add</button></li>
+                <li><button id="note056">Note 56</button><button id="addnote056" class="add">Add</button></li>
+                <li><button id="note057">Note 57</button><button id="addnote057" class="add">Add</button></li>
+                <li><button id="note058">Note 58</button><button id="addnote058" class="add">Add</button></li>
+                <li><button id="note059">Note 59</button><button id="addnote059" class="add">Add</button></li>
+                <li><button id="note060">Note 60</button><button id="addnote060" class="add">Add</button></li>
+                <li><button id="note061">Note 61</button><button id="addnote061" class="add">Add</button></li>
+                <li><button id="note062">Note 62</button><button id="addnote062" class="add">Add</button></li>
+                <li><button id="note063">Note 63</button><button id="addnote063" class="add">Add</button></li>
+                <li><button id="note064">Note 64</button><button id="addnote064" class="add">Add</button></li>
+                <li><button id="note065">Note 65</button><button id="addnote065" class="add">Add</button></li>
+                <li><button id="note066">Note 66</button><button id="addnote066" class="add">Add</button></li>
+                <li><button id="note067">Note 67</button><button id="addnote067" class="add">Add</button></li>
+                <li><button id="note068">Note 68</button><button id="addnote068" class="add">Add</button></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="stringSounds" style="list-style-type:none">
+        <li id="violin" type="text"><a href="#">Violin</a>
+            <ul style="list-style-type: none">
+                <li><button id="violin1">Note 1</button><button id="addviolin1" class="add">Add</button></li>
+                <li><button id="violin2">Note 2</button><button id="addviolin2" class="add">Add</button></li>
+                <li><button id="violin3">Note 3</button><button id="addviolin3" class="add">Add</button></li>
+                <li><button id="violin4">Note 4</button><button id="addviolin4" class="add">Add</button></li>
+                <li><button id="violin5">Note 5</button><button id="addviolin5" class="add">Add</button></li>
+                <li><button id="violin6">Note 6</button><button id="addviolin6" class="add">Add</button></li>
+                <li><button id="violin7">Note 7</button><button id="addviolin7" class="add">Add</button></li>
+                <li><button id="violin8">Note 8</button><button id="addviolin8" class="add">Add</button></li>
+                <li><button id="violin9">Note 9</button><button id="addviolin9" class="add">Add</button></li>
+                <li><button id="violin10">Note 10</button><button id="addviolin10" class="add">Add</button></li>
+                <li><button id="violin11">Note 11</button><button id="addviolin11" class="add">Add</button></li>
+                <li><button id="violin12">Note 12</button><button id="addviolin12" class="add">Add</button></li>
+                <li><button id="violin13">Note 13</button><button id="addviolin13" class="add">Add</button></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="brassSounds" style="list-style-type:none">
+        <li id="trumpet" type="text"><a href="#">Trumpet</a>
+            <ul style="list-style-type: none">
+                <li><button id="trumpet1">Pack 1</button><button id="addtrumpet1" class="add">Add</button></li>
+                <li><button id="trumpet2">Pack 2</button><button id="addtrumpet2" class="add">Add</button></li>
+                <li><button id="trumpet3">Pack 3</button><button id="addtrumpet3" class="add">Add</button></li>
+                <li><button id="trumpet4">Pack 4</button><button id="addtrumpet4" class="add">Add</button></li>
+                <li><button id="trumpet5">Pack 5</button><button id="addtrumpet5" class="add">Add</button></li>
+                <li><button id="trumpet6">Pack 6</button><button id="addtrumpet6" class="add">Add</button></li>
+                <li><button id="trumpet7">Pack 7</button><button id="addtrumpet7" class="add">Add</button></li>
+                <li><button id="trumpet8">Pack 8</button><button id="addtrumpet8" class="add">Add</button></li>
+                <li><button id="trumpet9">Pack 9</button><button id="addtrumpet9" class="add">Add</button></li>
+                <li><button id="trumpet10">Pack 10</button><button id="addtrumpet10" class="add">Add</button></li>
+                <li><button id="trumpet11">Pack 11</button><button id="addtrumpet11" class="add">Add</button></li>
+                <li><button id="trumpet12">Pack 12</button><button id="addtrumpet12" class="add">Add</button></li>
+            </ul>
+        </li>
+        <li id="tuba" type="text"><a href="#">Tuba</a>
+            <ul style="list-style-type: none">
+                <li><button id="tuba1">E Mu Proteus FX Tuba C2</button><button id="addtuba1" class="add">Add</button></li>
+                <li><button id="tuba2">Korg M1 Tuba Flugel C3</button><button id="addtuba2" class="add">Add</button></li>
+                <li><button id="tuba3">Yamaha TG500 BR Tuba C2</button><button id="addtuba3" class="add">Add</button></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<audio id="clap1sound"><source src="sounds/Claps/MB%20Clap%20(1).wav" type="audio/wav"></audio>
+<audio id="clap2sound"><source src="sounds/Claps/MB%20Clap%20(2).wav" type="audio/wav"></audio>
+<audio id="clap3sound"><source src="sounds/Claps/MB%20Clap%20(3).wav" type="audio/wav"></audio>
+<audio id="clap4sound"><source src="sounds/Claps/MB%20Clap%20(4).wav" type="audio/wav"></audio>
+<audio id="clap5sound"><source src="sounds/Claps/MB%20Clap%20(5).wav" type="audio/wav"></audio>
+<audio id="clap6sound"><source src="sounds/Claps/MB%20Clap%20(6).wav" type="audio/wav"></audio>
+<audio id="clap7sound"><source src="sounds/Claps/MB%20Clap%20(7).wav" type="audio/wav"></audio>
+<audio id="clap8sound"><source src="sounds/Claps/MB%20Clap%20(8).wav" type="audio/wav"></audio>
+<audio id="clap9sound"><source src="sounds/Claps/MB%20Clap%20(9).wav" type="audio/wav"></audio>
+<audio id="clap10sound"><source src="sounds/Claps/MB%20Clap%20(10).wav" type="audio/wav"></audio>
+
+<audio id="8081sound"><source src="sounds/808s/MB%20808%20(1).wav" type="audio/wav"></audio>
+<audio id="8082sound"><source src="sounds/808s/MB%20808%20(2).wav" type="audio/wav"></audio>
+<audio id="8083sound"><source src="sounds/808s/MB%20808%20(3).wav" type="audio/wav"></audio>
+<audio id="8084sound"><source src="sounds/808s/MB%20808%20(4).wav" type="audio/wav"></audio>
+<audio id="8085sound"><source src="sounds/808s/MB%20808%20(5).wav" type="audio/wav"></audio>
+<audio id="8086sound"><source src="sounds/808s/MB%20808%20(6).wav" type="audio/wav"></audio>
+<audio id="8087sound"><source src="sounds/808s/MB%20808%20(7).wav" type="audio/wav"></audio>
+<audio id="8088sound"><source src="sounds/808s/MB%20808%20(8).wav" type="audio/wav"></audio>
+<audio id="8089sound"><source src="sounds/808s/MB%20808%20(9).wav" type="audio/wav"></audio>
+<audio id="80810sound"><source src="sounds/808s/MB%20808%20(10).wav" type="audio/wav"></audio>
+
+<audio id="crash1sound"><source src="MB%20Crash%20(1).wav" type="audio/wav"></audio>
+<audio id="crash2sound"><source src="MB%20Crash%20(2).wav" type="audio/wav"></audio>
+<audio id="crash3sound"><source src="MB%20Crash%20(3).wav" type="audio/wav"></audio>
+<audio id="crash4sound"><source src="MB%20Crash%20(4).wav" type="audio/wav"></audio>
+<audio id="crash5sound"><source src="MB%20Crash%20(5).wav" type="audio/wav"></audio>
+<audio id="crash6sound"><source src="MB%20Crash%20(6).wav" type="audio/wav"></audio>
+<audio id="crash7sound"><source src="MB%20Crash%20(7).wav" type="audio/wav"></audio>
+<audio id="crash8sound"><source src="MB%20Crash%20(8).wav" type="audio/wav"></audio>
+<audio id="crash9sound"><source src="MB%20Crash%20(9).wav" type="audio/wav"></audio>
+<audio id="crash10sound"><source src="MB%20Crash%20(10).wav" type="audio/wav"></audio>
+
+<audio id="drop1sound"><source src="MB%20Drop%20Effect%20(1).wav" type="audio/wav"></audio>
+<audio id="drop2sound"><source src="MB%20Drop%20Effect%20(2).wav" type="audio/wav"></audio>
+<audio id="drop3sound"><source src="MB%20Drop%20Effect%20(3).wav" type="audio/wav"></audio>
+<audio id="fx1sound"><source src="MB%20FX%20(1).mp3" type="audio/wav"></audio>
+<audio id="fx2sound"><source src="MB%20FX%20(2).wav" type="audio/wav"></audio>
+<audio id="fx3sound"><source src="MB%20FX%20(3).wav" type="audio/wav"></audio>
+<audio id="fx4sound"><source src="MB%20FX%20(4).wav" type="audio/wav"></audio>
+<audio id="fx5sound"><source src="MB%20FX%20(5).wav" type="audio/wav"></audio>
+<audio id="fx6sound"><source src="MB%20FX%20(6).wav" type="audio/wav"></audio>
+<audio id="fx7sound"><source src="MB%20FX%20(7).wav" type="audio/wav"></audio>
+<audio id="fx8sound"><source src="MB%20FX%20(8).wav" type="audio/wav"></audio>
+<audio id="fx9sound"><source src="MB%20FX%20(9).wav" type="audio/wav"></audio>
+<audio id="fx10sound"><source src="MB%20FX%20(10).wav" type="audio/wav"></audio>
+<audio id="sfx1sound"><source src="MB%20SFX%20(1).wav" type="audio/wav"></audio>
+<audio id="sfx2sound"><source src="MB%20SFX%20(2).wav" type="audio/wav"></audio>
+<audio id="sfx3sound"><source src="MB%20SFX%20(3).wav" type="audio/wav"></audio>
+<audio id="sfx4sound"><source src="MB%20SFX%20(4).wav" type="audio/wav"></audio>
+<audio id="tfx1sound"><source src="MB%20Trans%20FX%20(1).wav" type="audio/wav"></audio>
+<audio id="tfx2sound"><source src="MB%20Trans%20FX%20(2).wav" type="audio/wav"></audio>
+<audio id="tfx3sound"><source src="MB%20Trans%20FX%20(3).wav" type="audio/wav"></audio>
+<audio id="tfx4sound"><source src="MB%20Trans%20FX%20(4).wav" type="audio/wav"></audio>
+<audio id="tfx5sound"><source src="MB%20Trans%20FX%20(5).wav" type="audio/wav"></audio>
+<audio id="tfx6sound"><source src="MB%20Trans%20FX%20(6).wav" type="audio/wav"></audio>
+<audio id="tfx7sound"><source src="MB%20Trans%20FX%20(7).wav" type="audio/wav"></audio>
+<audio id="tfx8sound"><source src="MB%20Trans%20FX%20(8).wav" type="audio/wav"></audio>
+<audio id="tfx9sound"><source src="MB%20Trans%20FX%20(9).wav" type="audio/wav"></audio>
+<audio id="tfx10sound"><source src="MB%20Trans%20FX%20(10).wav" type="audio/wav"></audio>
+
+<audio id="hh1sound"><source src="MB%20Hi%20Hat%20(1).wav" type="audio/wav"></audio>
+<audio id="hh2sound"><source src="MB%20Hi%20Hat%20(2).wav" type="audio/wav"></audio>
+<audio id="hh3sound"><source src="MB%20Hi%20Hat%20(3).wav" type="audio/wav"></audio>
+<audio id="hh4sound"><source src="MB%20Hi%20Hat%20(4).wav" type="audio/wav"></audio>
+<audio id="hh5sound"><source src="MB%20Hi%20Hat%20(5).wav" type="audio/wav"></audio>
+<audio id="hh6sound"><source src="MB%20Hi%20Hat%20(6).wav" type="audio/wav"></audio>
+<audio id="hh7sound"><source src="MB%20Hi%20Hat%20(7).wav" type="audio/wav"></audio>
+<audio id="hh8sound"><source src="MB%20Hi%20Hat%20(8).wav" type="audio/wav"></audio>
+<audio id="hh9sound"><source src="MB%20Hi%20Hat%20(9).wav" type="audio/wav"></audio>
+
+<audio id="hit1sound"><source src="MB%20Hit%20(1).wav" type="audio/wav"></audio>
+<audio id="hit2sound"><source src="MB%20Hit%20(2).wav" type="audio/wav"></audio>
+<audio id="hit3sound"><source src="MB%20Hit%20(3).wav" type="audio/wav"></audio>
+<audio id="hit4sound"><source src="MB%20Hit%20(4).wav" type="audio/wav"></audio>
+<audio id="hit5sound"><source src="MB%20Hit%20(5).wav" type="audio/wav"></audio>
+<audio id="hit6sound"><source src="MB%20Hit%20(6).wav" type="audio/wav"></audio>
+<audio id="hit7sound"><source src="MB%20Hit%20(7).wav" type="audio/wav"></audio>
+<audio id="hit8sound"><source src="MB%20Hit%20(8).wav" type="audio/wav"></audio>
+
+<audio id="kick1sound"><source src="MB%20Kick%20(1).wav" type="audio/wav"></audio>
+<audio id="kick2sound"><source src="MB%20Kick%20(2).wav" type="audio/wav"></audio>
+<audio id="kick3sound"><source src="MB%20Kick%20(3).wav" type="audio/wav"></audio>
+<audio id="kick4sound"><source src="MB%20Kick%20(4).wav" type="audio/wav"></audio>
+<audio id="kick5sound"><source src="MB%20Kick%20(5).wav" type="audio/wav"></audio>
+<audio id="kick6sound"><source src="MB%20Kick%20(6).wav" type="audio/wav"></audio>
+<audio id="kick7sound"><source src="MB%20Kick%20(7).wav" type="audio/wav"></audio>
+<audio id="kick8sound"><source src="MB%20Kick%20(8).wav" type="audio/wav"></audio>
+<audio id="kick9sound"><source src="MB%20Kick%20(9).wav" type="audio/wav"></audio>
+<audio id="kick10sound"><source src="MB%20Kick%20(10).wav" type="audio/wav"></audio>
+<audio id="kick11sound"><source src="MB%20Kick%20(11).wav" type="audio/wav"></audio>
+<audio id="kick12sound"><source src="MB%20Kick%20(12).wav" type="audio/wav"></audio>
+<audio id="kick13sound"><source src="MB%20Kick%20(13).wav" type="audio/wav"></audio>
+<audio id="kick14sound"><source src="MB%20Kick%20(14).wav" type="audio/wav"></audio>
+<audio id="kick15sound"><source src="MB%20Kick%20(15).wav" type="audio/wav"></audio>
+<audio id="kick16sound"><source src="MB%20Kick%20(16).wav" type="audio/wav"></audio>
+<audio id="kick17sound"><source src="MB%20Kick%20(17).wav" type="audio/wav"></audio>
+<audio id="kick18sound"><source src="MB%20Kick%20(18).wav" type="audio/wav"></audio>
+<audio id="kick19sound"><source src="MB%20Kick%20(19).wav" type="audio/wav"></audio>
+<audio id="kick20sound"><source src="MB%20Kick%20(20).wav" type="audio/wav"></audio>
+
+<audio id="oh1sound"><source src="MB%20Open%20Hat%20(1).wav" type="audio/wav"></audio>
+<audio id="oh2sound"><source src="MB%20Open%20Hat%20(2).wav" type="audio/wav"></audio>
+<audio id="oh3sound"><source src="MB%20Open%20Hat%20(3).wav" type="audio/wav"></audio>
+<audio id="oh4sound"><source src="MB%20Open%20Hat%20(4).wav" type="audio/wav"></audio>
+<audio id="oh5sound"><source src="MB%20Open%20Hat%20(5).wav" type="audio/wav"></audio>
+<audio id="oh6sound"><source src="MB%20Open%20Hat%20(6).wav" type="audio/wav"></audio>
+<audio id="oh7sound"><source src="MB%20Open%20Hat%20(7).wav" type="audio/wav"></audio>
+<audio id="oh8sound"><source src="MB%20Open%20Hat%20(8).wav" type="audio/wav"></audio>
+
+<audio id="perc1sound"><source src="MB%20Perc%20(1).wav" type="audio/wav"></audio>
+<audio id="perc2sound"><source src="MB%20Perc%20(2).wav" type="audio/wav"></audio>
+<audio id="perc3sound"><source src="MB%20Perc%20(3).wav" type="audio/wav"></audio>
+<audio id="perc4sound"><source src="MB%20Perc%20(4).wav" type="audio/wav"></audio>
+<audio id="perc5sound"><source src="MB%20Perc%20(5).wav" type="audio/wav"></audio>
+<audio id="perc6sound"><source src="MB%20Perc%20(6).wav" type="audio/wav"></audio>
+<audio id="perc7sound"><source src="MB%20Perc%20(7).wav" type="audio/wav"></audio>
+<audio id="perc8sound"><source src="MB%20Perc%20(8).wav" type="audio/wav"></audio>
+<audio id="perc9sound"><source src="MB%20Perc%20(9).wav" type="audio/wav"></audio>
+<audio id="perc10sound"><source src="MB%20Perc%20(10).wav" type="audio/wav"></audio>
+
+<audio id="snare1sound"><source src="MB%20Snare%20(1).wav" type="audio/wav"></audio>
+<audio id="snare2sound"><source src="MB%20Snare%20(2).wav" type="audio/wav"></audio>
+<audio id="snare3sound"><source src="MB%20Snare%20(3).wav" type="audio/wav"></audio>
+<audio id="snare4sound"><source src="MB%20Snare%20(4).wav" type="audio/wav"></audio>
+<audio id="snare5sound"><source src="MB%20Snare%20(5).wav" type="audio/wav"></audio>
+<audio id="snare6sound"><source src="MB%20Snare%20(6).wav" type="audio/wav"></audio>
+<audio id="snare7sound"><source src="MB%20Snare%20(7).wav" type="audio/wav"></audio>
+<audio id="snare8sound"><source src="MB%20Snare%20(8).wav" type="audio/wav"></audio>
+<audio id="snare9sound"><source src="MB%20Snare%20(9).wav" type="audio/wav"></audio>
+<audio id="snare10sound"><source src="MB%20Snare%20(10).wav" type="audio/wav"></audio>
+<audio id="snare11sound"><source src="MB%20Snare%20(11).wav" type="audio/wav"></audio>
+<audio id="snare12sound"><source src="MB%20Snare%20(12).wav" type="audio/wav"></audio>
+<audio id="snare13sound"><source src="MB%20Snare%20(13).wav" type="audio/wav"></audio>
+<audio id="snare14sound"><source src="MB%20Snare%20(14).wav" type="audio/wav"></audio>
+<audio id="snare15sound"><source src="MB%20Snare%20(15).wav" type="audio/wav"></audio>
+
+<audio id="vox1sound"><source src="MB%20Vox%20(1).wav" type="audio/wav"></audio>
+<audio id="vox2sound"><source src="MB%20Vox%20(2).wav" type="audio/wav"></audio>
+<audio id="vox3sound"><source src="MB%20Vox%20(3).wav" type="audio/wav"></audio>
+<audio id="vox4sound"><source src="MB%20Vox%20(4).wav" type="audio/wav"></audio>
+<audio id="vox5sound"><source src="MB%20Vox%20(5).wav" type="audio/wav"></audio>
+<audio id="vox6sound"><source src="MB%20Vox%20(6).wav" type="audio/wav"></audio>
+<audio id="vox7sound"><source src="MB%20Vox%20(7).wav" type="audio/wav"></audio>
+<audio id="vox8sound"><source src="MB%20Vox%20(8).wav" type="audio/wav"></audio>
+<audio id="vox9sound"><source src="MB%20Vox%20(9).wav" type="audio/wav"></audio>
+<audio id="vox10sound"><source src="MB%20Vox%20(10).wav" type="audio/wav"></audio>
+
+<audio id="mafiasound"><source src="808%20Mafia%20Tag.wav" type="audio/wav"></audio>
+<audio id="bombsound"><source src="MB%20Bomb%20Hit.wav" type="audio/wav"></audio>
+<audio id="choirsound"><source src="MB%20Choir.wav" type="audio/wav"></audio>
+<audio id="churchbellsound"><source src="MB%20Church%20Bell.wav" type="audio/wav"></audio>
+<audio id="djSpinsound"><source src="MB%20DJ%20Spin.wav" type="audio/wav"></audio>
+<audio id="loopsound"><source src="MB%20Loop.wav" type="audio/wav"></audio>
+<audio id="lumisound"><source src="MB%20Lumi%20Hit.wav" type="audio/wav"></audio>
+<audio id="narcaticssound"><source src="MB%20Narcatics%20Hit.wav" type="audio/wav"></audio>
+<audio id="organsound"><source src="MB%20Organ.wav" type="audio/wav"></audio>
+<audio id="pizzisound"><source src="MB%20Pizzi%20Loop.wav" type="audio/wav"></audio>
+<audio id="sonicsound"><source src="MB%20Sonic%20Boom.wav" type="audio/wav"></audio>
+<audio id="tubularsound"><source src="MB%20Tubular%20Bell.wav" type="audio/wav"></audio>
+<audio id="djescosound"><source src="DJ%20Esco%20Let's%20Gooooo%20(audio-cutter.com).mp3" type="audio/wav"></audio>
+<audio id="djeskimosound"><source src="DJ%20Eskimo%20City%20The%20Coolest%20DJ%20on%20the%20Planet%20(audio-cutter.com).mp3" type="audio/wav"></audio>
+<audio id="eskimosound"><source src="Eskimo%20The%20Coolest%20DJ%20In%20The%20World%20(audio-cutter.com).mp3" type="audio/wav"></audio>
+<audio id="youngmetrosound"><source src="If%20Young%20Metro%20Don't%20Trust%20You%20(mp3cut.net).mp3" type="audio/wav"></audio>
+<audio id="travisscottsound"><source src="Travis%20Scott%20adlib.mp3" type="audio/wav"></audio>
+<audio id="londonsound"><source src="We%20Got%20London%20On%20Tha%20Track.mp3" type="audio/wav"></audio>
+<audio id="zaytovensound"><source src="Zaytoven%20adlib%20(audio-cutter.com).mp3" type="audio/wav"></audio>
+<audio id="mbtagsound"><source src="Metro%20Boomin%20Tag.mp3" type="audio/wav"></audio>
+<audio id="drakeyeahsound"><source src="drake_yeah.mp3" type="audio/mp3"></audio>
+<audio id="stephcurrysound"><source src="fuckstephcurry.mp3" type="audio/mp3"></audio>
+<audio id="guccisound"><source src="its_gucci.mp3" type="audio/mp3"></audio>
+<audio id="ovosound"><source src="OVO%20SOUND%20RADIO.mp3" type="audio/mp3"></audio>
+<audio id="sixdrakesound"><source src="sixdrake.mp3"></audio>
+<audio id="straightupsound"><source src="straightup1.wav" type="audio/wav"></audio>
+
+<audio id="note001sound"><source src="001.wav" type="audio/wav"></audio>
+<audio id="note002sound"><source src="002.wav" type="audio/wav"></audio>
+<audio id="note003sound"><source src="003.wav" type="audio/wav"></audio>
+<audio id="note004sound"><source src="004.wav" type="audio/wav"></audio>
+<audio id="note005sound"><source src="005.wav" type="audio/wav"></audio>
+<audio id="note006sound"><source src="006.wav" type="audio/wav"></audio>
+<audio id="note007sound"><source src="007.wav" type="audio/wav"></audio>
+<audio id="note008sound"><source src="008.wav" type="audio/wav"></audio>
+<audio id="note009sound"><source src="009.wav" type="audio/wav"></audio>
+<audio id="note010sound"><source src="010.wav" type="audio/wav"></audio>
+<audio id="note011sound"><source src="011.wav" type="audio/wav"></audio>
+<audio id="note012sound"><source src="012.wav" type="audio/wav"></audio>
+<audio id="note013sound"><source src="013.wav" type="audio/wav"></audio>
+<audio id="note014sound"><source src="014.wav" type="audio/wav"></audio>
+<audio id="note015sound"><source src="015.wav" type="audio/wav"></audio>
+<audio id="note016sound"><source src="016.wav" type="audio/wav"></audio>
+<audio id="note017sound"><source src="017.wav" type="audio/wav"></audio>
+<audio id="note018sound"><source src="018.wav" type="audio/wav"></audio>
+<audio id="note019sound"><source src="019.wav" type="audio/wav"></audio>
+<audio id="note020sound"><source src="020.wav" type="audio/wav"></audio>
+<audio id="note021sound"><source src="021.wav" type="audio/wav"></audio>
+<audio id="note022sound"><source src="022.wav" type="audio/wav"></audio>
+<audio id="note023sound"><source src="023.wav" type="audio/wav"></audio>
+<audio id="note024sound"><source src="024.wav" type="audio/wav"></audio>
+<audio id="note025sound"><source src="025.wav" type="audio/wav"></audio>
+<audio id="note026sound"><source src="026.wav" type="audio/wav"></audio>
+<audio id="note027sound"><source src="027.wav" type="audio/wav"></audio>
+<audio id="note028sound"><source src="028.wav" type="audio/wav"></audio>
+<audio id="note029sound"><source src="029.wav" type="audio/wav"></audio>
+<audio id="note030sound"><source src="030.wav" type="audio/wav"></audio>
+<audio id="note031sound"><source src="031.wav" type="audio/wav"></audio>
+<audio id="note032sound"><source src="032.wav" type="audio/wav"></audio>
+<audio id="note033sound"><source src="033.wav" type="audio/wav"></audio>
+<audio id="note034sound"><source src="034.wav" type="audio/wav"></audio>
+<audio id="note035sound"><source src="035.wav" type="audio/wav"></audio>
+<audio id="note036sound"><source src="036.wav" type="audio/wav"></audio>
+<audio id="note037sound"><source src="037.wav" type="audio/wav"></audio>
+<audio id="note038sound"><source src="038.wav" type="audio/wav"></audio>
+<audio id="note039sound"><source src="039.wav" type="audio/wav"></audio>
+<audio id="note040sound"><source src="040.wav" type="audio/wav"></audio>
+<audio id="note041sound"><source src="041.wav" type="audio/wav"></audio>
+<audio id="note042sound"><source src="042.wav" type="audio/wav"></audio>
+<audio id="note043sound"><source src="043.wav" type="audio/wav"></audio>
+<audio id="note044sound"><source src="044.wav" type="audio/wav"></audio>
+<audio id="note045sound"><source src="045.wav" type="audio/wav"></audio>
+<audio id="note046sound"><source src="046.wav" type="audio/wav"></audio>
+<audio id="note047sound"><source src="047.wav" type="audio/wav"></audio>
+<audio id="note048sound"><source src="048.wav" type="audio/wav"></audio>
+<audio id="note049sound"><source src="049.wav" type="audio/wav"></audio>
+<audio id="note050sound"><source src="050.wav" type="audio/wav"></audio>
+<audio id="note051sound"><source src="051.wav" type="audio/wav"></audio>
+<audio id="note052sound"><source src="052.wav" type="audio/wav"></audio>
+<audio id="note053sound"><source src="053.wav" type="audio/wav"></audio>
+<audio id="note054sound"><source src="054.wav" type="audio/wav"></audio>
+<audio id="note055sound"><source src="055.wav" type="audio/wav"></audio>
+<audio id="note056sound"><source src="056.wav" type="audio/wav"></audio>
+<audio id="note057sound"><source src="057.wav" type="audio/wav"></audio>
+<audio id="note058sound"><source src="058.wav" type="audio/wav"></audio>
+<audio id="note059sound"><source src="059.wav" type="audio/wav"></audio>
+<audio id="note060sound"><source src="060.wav" type="audio/wav"></audio>
+<audio id="note061sound"><source src="061.wav" type="audio/wav"></audio>
+<audio id="note062sound"><source src="062.wav" type="audio/wav"></audio>
+<audio id="note063sound"><source src="063.wav" type="audio/wav"></audio>
+<audio id="note064sound"><source src="064.wav" type="audio/wav"></audio>
+<audio id="note065sound"><source src="065.wav" type="audio/wav"></audio>
+<audio id="note066sound"><source src="066.wav" type="audio/wav"></audio>
+<audio id="note067sound"><source src="067.wav" type="audio/wav"></audio>
+<audio id="note068sound"><source src="068.wav" type="audio/wav"></audio>
+
+<audio id="trumpet1sound"><source src="77706__sorohanro__solo-trumpet-01in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet2sound"><source src="77707__sorohanro__solo-trumpet-02in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet3sound"><source src="77708__sorohanro__solo-trumpet-03in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet4sound"><source src="77709__sorohanro__solo-trumpet-04in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet5sound"><source src="77710__sorohanro__solo-trumpet-05in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet6sound"><source src="77711__sorohanro__solo-trumpet-06in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet7sound"><source src="77712__sorohanro__solo-trumpet-07in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet8sound"><source src="77713__sorohanro__solo-trumpet-08in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet9sound"><source src="77714__sorohanro__solo-trumpet-09in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet10sound"><source src="77715__sorohanro__solo-trumpet-10in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet11sound"><source src="77716__sorohanro__trumpet-pack-01in-f-90bpm.wav" type="audio/wav"></audio>
+<audio id="trumpet12sound"><source src="77717__sorohanro__trumpet-pack-02in-f-90bpm.wav" type="audio/wav"></audio>
+
+<audio id="tuba1sound"><source src="E-Mu-Proteus-FX-Tuba-C2.wav" type="audio/wav"></audio>
+<audio id="tuba2sound"><source src="Korg-M1-TubaFlugel-C3.wav" type="audio/wav"></audio>
+<audio id="tuba3sound"><source src="Yamaha-TG500-BR-Tuba-C2.wav" type="audio/wav"></audio>
+
+<audio id="violin1sound"><source src="153598__carlos-vaquero__violin-g-5-tenuto-vibrato.wav"></audio>
+<audio id="violin2sound"><source src="153599__carlos-vaquero__violin-f-5-tenuto-vibrato.wav"></audio>
+<audio id="violin3sound"><source src="153600__carlos-vaquero__violin-f-5-tenuto-vibrato.wav"></audio>
+<audio id="violin4sound"><source src="153601__carlos-vaquero__violin-e-5-tenuto-vibrato.wav"></audio>
+<audio id="violin5sound"><source src="153602__carlos-vaquero__violin-d-5-tenuto-vibrato.wav"></audio>
+<audio id="violin6sound"><source src="153603__carlos-vaquero__violin-d-5-tenuto-vibrato.wav"></audio>
+<audio id="violin7sound"><source src="153604__carlos-vaquero__violin-c-5-tenuto-vibrato.wav"></audio>
+<audio id="violin8sound"><source src="153605__carlos-vaquero__violin-c-5-tenuto-vibrato.wav"></audio>
+<audio id="violin9sound"><source src="153606__carlos-vaquero__violin-b-4-tenuto-vibrato.wav"></audio>
+<audio id="violin10sound"><source src="153607__carlos-vaquero__violin-a-4-tenuto-vibrato.wav"></audio>
+<audio id="violin11sound"><source src="153608__carlos-vaquero__violin-a-4-tenuto-vibrato.wav"></audio>
+<audio id="violin12sound"><source src="153609__carlos-vaquero__violin-g-4-tenuto-vibrato.wav"></audio>
+<audio id="violin13sound"><source src="153610__carlos-vaquero__violin-g-4-tenuto-vibrato.wav"></audio>
+
+
+</body>
+</html>
